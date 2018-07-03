@@ -7,17 +7,31 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      all : [],
-      currently : [1, 2, 3],
-      toRead : [],
+      books : [],
+      currentlyReading : [],
+      wantToRead : [],
       read : []
     }
   }
 
-  componentDidMount() {
+  // componentDidMount() {
+  //     BooksAPI.getAll().then(books => {
+  //
+  //     this.setState({ books:books }) }).then(console.log(this.state.books));
+  //   }
+
+
+  componentDidMount = () => {
+      this.getMyBooks()
+  }
+
+  getMyBooks = () => {
       BooksAPI.getAll().then(books => {
-      this.setState({ all : books }) })
-    }
+          this.setState({ books: books })
+          console.log(this.state)
+      })
+  }
+
 
 
   render() {
@@ -27,9 +41,9 @@ class App extends Component {
         <h1>My Reads</h1>
       </nav>
       <div className="main">
-        <Bookshelf name="Currently reading" books={this.state.currently}/>
-        <Bookshelf name="To read" books={this.state.toRead}/>
-        <Bookshelf name="Read" books={this.state.read}/>
+        <Bookshelf name="Currently reading" books={this.state.books} id='currentlyReading'/>
+        <Bookshelf name="To read" books={this.state.books} id='wantToRead'/>
+        <Bookshelf name="Read" books={this.state.books} id='read'/>
       </div>
       </div>
 
