@@ -1,6 +1,6 @@
 .bookshelf {
-  width: 90%;
-  height: 300px;
+  width: 80%;
+  min-height: 300px;
   border-bottom: 3px solid #5F4B8B;
   margin: 10px auto;
 }
@@ -8,8 +8,9 @@
 .booklist {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
-.book {
-  list-style: none;
+.bookshelf p {
+  color: #767;
 }
