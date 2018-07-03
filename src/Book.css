@@ -1,0 +1,34 @@
+.book {
+  list-style: none;
+  margin: 10px 20px;
+  position: relative;
+}
+
+.cover {
+  width: 128px;
+  height: 193px;
+  border: 1px solid black;
+  background-color: teal;
+}
+
+.title, .name {
+  font-family: 'Arial', sans-serif;
+}
+
+.shelf-changer {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #777;
+}
+
+.shelf-changer select {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.book:hover .shelf-changer, .book:active .shelf-changer{
+  opacity: 0.6;
+}
