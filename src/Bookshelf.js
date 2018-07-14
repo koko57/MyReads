@@ -5,25 +5,20 @@ import Book from './Book.js'
 
 
 class Bookshelf extends Component {
-
+    constructor(props) {
+        super(props)
+        this.state = {
+            books : this.props.books
+        }
+    }
 
   render() {
     const { books } = this.props
-    let filtered
-    let matched
     return (
     <div className = "bookshelf">
-      <h2 className = "bookshelf-name"> {this.props.name} </h2>
-
+        <h2 className = "bookshelf-name"> {this.props.name} </h2>
         <ul className="booklist">
-        {books.length == 0 && <p>Your bookshelf is currently empty.</p>}
-        {
-        books.map(book => {if (book.shelf == this.props.id)
-
-        return <Book key={book.id}/>} )
-}
-
-
+        {books.map(book => <Book key={book.id} shelf={book.shelf} changeShelf={this.props.shelfChange} book={book} image={book.imageLinks.thumbnail} author={book.authors} title={book.title}/>)}
         </ul>
     </div>
     )

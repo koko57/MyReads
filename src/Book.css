@@ -4,15 +4,18 @@
   position: relative;
 }
 
-.cover {
+.book-cover {
   width: 128px;
   height: 193px;
   border: 1px solid black;
   background-color: teal;
 }
 
-.title, .name {
+.book-info {
   font-family: 'Arial', sans-serif;
+  text-align: center;
+  width: 128px;
+  font-size: 0.9em;
 }
 
 .shelf-changer {
