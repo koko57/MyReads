@@ -1,16 +1,17 @@
 .bookshelf {
   width: 80%;
-  min-height: 300px;
-  border-bottom: 3px solid #5F4B8B;
+  min-height: 200px;
+  border-bottom: 3px solid rgba(95,75,139,0.8);
   margin: 10px auto;
+  font-weight: 400;
+}
+
+.bookshelf:first-of-type {
+  margin-top: 50px;
 }
 
 .booklist {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
-
-.bookshelf p {
-  color: #767;
 }
