@@ -22,11 +22,11 @@ class App extends Component {
     this.changeShelf = this.changeShelf.bind(this);
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
     this.getBooks();
   }
 
-  getBooks() {
+  getBooks = () => {
     BooksAPI.getAll().then(books => {
       this.setState({
         current: books.filter(book => book.shelf === 'currentlyReading'),
@@ -53,6 +53,12 @@ class App extends Component {
     });
   }
 
+  clearResults = () => {
+    this.setState({
+      results : []
+    });
+  }
+
   render() {
     const { current, toRead, read, results } = this.state;
     return (
@@ -64,15 +70,15 @@ class App extends Component {
               <Link to='/search'><FontAwesomeIcon icon="search" /></Link> 
             </nav>
             <div className="main" >
-              <Bookshelf name="Currently reading" id='currentlyReading' books={current} shelfChange={this.changeShelf} />
-              <Bookshelf name="To read" id='wantToRead' books={toRead} shelfChange={this.changeShelf} />
-              <Bookshelf name="Read" id='read' books={read} shelfChange={this.changeShelf} /> 
+              <Bookshelf name="Currently reading" id='currentlyReading' books={current} change={this.changeShelf} />
+              <Bookshelf name="To read" id='wantToRead' books={toRead} change={this.changeShelf} />
+              <Bookshelf name="Read" id='read' books={read} change={this.changeShelf} /> 
             </div>
           </div>
           )
         }/>
         <Route path='/search' render={({ history }) => ( 
-          <Search search={this.searchBook} books={results} shelfChange={this.changeShelf}/>
+          <Search search={this.searchBook} books={results} shelfChange={this.changeShelf} clear={this.clearResults}/>
           )
         }/> 
       </div>

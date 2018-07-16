@@ -26,17 +26,18 @@ class Search extends Component {
     }
 
     clearQuery = () => {
+        this.props.clear();
         this.setState({
             query: ''
         });
     }
 
     render() {
-        const { books, shelfChange } = this.props;
+        const { books, shelfChange, clear } = this.props;
         return (
         <div>
             <nav>
-                <Link to='/'><FontAwesomeIcon icon="chevron-left" /></Link>
+                <Link to='/'><FontAwesomeIcon icon="chevron-left" onClick={clear}/></Link>
                 <h1>My Reads</h1>
                 <div className='logo'></div>
                 <div className="search-input"><input type="text" className="search"  placeholder="Search books" 
@@ -54,7 +55,8 @@ class Search extends Component {
 }
 Search.propTypes = {
     books: PropTypes.array,
-    shelfChange: PropTypes.func
+    shelfChange: PropTypes.func,
+    clear: PropTypes.func
 }
 
 export default Search
