@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Book from './Book';
 import './search.css';
+import './responsive.css'
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -36,9 +37,9 @@ class Search extends Component {
         const { books, shelfChange, clear } = this.props;
         return (
         <div>
-            <nav>
-                <Link to='/'><FontAwesomeIcon icon="chevron-left" onClick={clear}/></Link>
-                <h1>My Reads</h1>
+            <nav className="searchnav">
+                <Link to='/'><FontAwesomeIcon icon="chevron-left" onClick={clear} /></Link>
+                <img className="logo logo__searchnav" src={"https://vectr.com/koko57/bK5KH3g7S.svg?width=539&height=179.66&select=bK5KH3g7Spage0"} alt="MyReads"/>
                 <div className='logo'></div>
                 <div className="search-input"><input type="text" className="search"  placeholder="Search books" 
                 value={this.state.query}

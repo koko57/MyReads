@@ -1,0 +1,30 @@
+@media(max-width: 640px) {
+    .searchnav {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .logo__searchnav {
+        order: 1;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    a {
+        order: 2;
+    }
+    .search-input {
+        order: 3;
+        width: 100%;
+        flex-basis: 80%;
+    }
+    .booklist__results {
+        margin-top: 150px;
+    }
+    .bookshelf {
+        text-align: center;
+    }
+    select {
+        transform: translateX(-65px);
+        -webkit-transform: translateX(-65px);
+        -ms-transform: translateX(-65px);
+    }
+}

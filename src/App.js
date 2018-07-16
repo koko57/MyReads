@@ -66,7 +66,7 @@ class App extends Component {
         <Route exact path='/' render={() => (
           <div>
             <nav className="navbar">
-              <h1>My Reads</h1>
+            <img className="logo" src={"https://vectr.com/koko57/bK5KH3g7S.svg?width=537&height=179&select=bK5KH3g7Spage0"} alt="MyReads"/>
               <Link to='/search'><FontAwesomeIcon icon="search" /></Link> 
             </nav>
             <div className="main" >
