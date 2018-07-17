@@ -42,7 +42,7 @@ class App extends Component {
 
   searchBook = (query) => {
     BooksAPI.search(query).then((books) => {
-      books.map(book => (this.state.results.filter(b => b.id === book.id).map(b => book.shelf = b.shelf)));
+      books.map(book => (this.state.results.filter(b => b.id === book.id)));
       this.setState({
         results : books
       });

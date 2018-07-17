@@ -17,7 +17,7 @@
   padding-left: 0;
 }
 
-p {
+.bookshelf > p {
   margin-top: 40px;
   color: #757575;
 }

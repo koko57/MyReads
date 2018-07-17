@@ -22,7 +22,7 @@ class Search extends Component {
         const query = e.target.value
         this.setState({
             query: query.trim()
-        })
+        });
         this.props.search(query);
     }
 
@@ -43,17 +43,19 @@ class Search extends Component {
                 <div className='logo'></div>
                 <div className="search-input"><input type="text" className="search"  placeholder="Search books" 
                 value={this.state.query}
-                onChange={this.handleChange}/>
+                onChange={this.handleChange} autoFocus/>
                 <FontAwesomeIcon icon="times" onClick={this.clearQuery}/>
                 </div>
             </nav>
             <ul className=" booklist booklist__results">
-                {books && books.map(book => <Book key={book.id} shelf={book.shelf} changeShelf={shelfChange} book={book} image={book.imageLinks.thumbnail} author={book.authors} title={book.title}/>) }
+                {books && books.map(book => <Book key={book.id} shelf={book.shelf} changeShelf={shelfChange} book={book} image={book.imageLinks ? book.imageLinks.thumbnail : 'none'} author={book.authors} title={book.title}/>) }
             </ul>
+            {books.length === 0 && <p>No search results.</p>}
         </div>
         )
     }
 }
+
 Search.propTypes = {
     books: PropTypes.array,
     shelfChange: PropTypes.func,
