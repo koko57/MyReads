@@ -9,9 +9,7 @@
 
 ## Getting started
 
-Go to https://koko57.github.io/MyReads/
-
-or clone this repo, then
+Clone this repo, then
 * install all project dependencies with `npm install`
 * start the server with `npm start`
 
