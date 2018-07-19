@@ -14,6 +14,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      onPage: [],
       results: [],
       current: [],
       toRead: [],
@@ -22,27 +23,24 @@ class App extends Component {
     this.changeShelf = this.changeShelf.bind(this);
   }
 
-  componentDidMount = () => {
-    this.getBooks();
-  }
-
+  componentDidMount = () => this.getBooks();
+  
   getBooks = () => {
     BooksAPI.getAll().then(books => {
       this.setState({
         current: books.filter(book => book.shelf === 'currentlyReading'),
         toRead: books.filter(book => book.shelf === 'wantToRead'),
-        read: books.filter(book => book.shelf === 'read')
+        read: books.filter(book => book.shelf === 'read'),
+        onPage: books.filter(book => book.shelf)
       });
     });
   }
 
-  changeShelf = (book, shelf) => {
-    BooksAPI.update(book, shelf).then(() => this.getBooks());
-  }
+  changeShelf = (book, shelf) => BooksAPI.update(book, shelf).then(() => this.getBooks());
 
   searchBook = (query) => {
     BooksAPI.search(query).then((books) => {
-      books.map(book => (this.state.results.filter(b => b.id === book.id)));
+      books.map(book => this.state.onPage.filter(bk => bk.id === book.id).map(bk => book.shelf = bk.shelf));
       this.setState({
         results : books
       });
@@ -53,11 +51,9 @@ class App extends Component {
     });
   }
 
-  clearResults = () => {
-    this.setState({
+  clearResults = () => this.setState({
       results : []
     });
-  }
 
   render() {
     const { current, toRead, read, results } = this.state;

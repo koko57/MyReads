@@ -15,11 +15,7 @@ const Book = ({ book , shelf, image, author, title, changeShelf }) => {
     };
     
     let style; 
-    if (image === 'none') {
-        style = {background: '#fff'}
-    } else {
-        style = {backgroundImage:`url(${image})`};
-    }
+    image === 'none' ? style = {background: '#fff'} : style = {backgroundImage:`url(${image})`};
     
     return (
       <li className="book">
