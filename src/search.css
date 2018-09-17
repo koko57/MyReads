@@ -1,32 +1,32 @@
 .search-input {
-    line-height: 2em;
-    font-size: 1.1em;
-    border: 1px solid #ddd;
-    background-color: #fff;
-    border-radius: 15px;
-    width: 50%;
-    color: rgb(85, 65, 129);
-    align-items: baselines;
+  line-height: 2em;
+  font-size: 1.1em;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  border-radius: 15px;
+  width: 50%;
+  color: rgb(85, 65, 129);
+  align-items: baselines;
 }
 
 input {
-    box-sizing: border-box;
-    line-height: 1.7em;
-    font-size: 1em;
-    font-weight: 200;
-    font-family: 'Encode Sans', sans-serif;
-    border: 1px solid rgba(255, 255, 255, 0);
-    border-radius: 15px;
-    width: 87%;
-    float: left;
-    padding: 2px 20px;
+  box-sizing: border-box;
+  line-height: 1.7em;
+  font-size: 1em;
+  font-weight: 200;
+  font-family: 'Encode Sans', sans-serif;
+  border: 1px solid rgba(255, 255, 255, 0);
+  border-radius: 15px;
+  width: 87%;
+  float: left;
+  padding: 2px 20px;
 }
 
 .booklist__results {
-    margin-top: 120px;
+  margin-top: 120px;
 }
 
 .booklist__results + p {
-    margin-top: 60px;
-    text-align: center;
+  margin-top: 60px;
+  text-align: center;
 }
