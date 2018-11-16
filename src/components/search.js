@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Book from './Book';
 import './search.css';
-import './responsive.css';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { library } from '@fortawesome/fontawesome-svg-core';

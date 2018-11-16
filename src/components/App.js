@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Bookshelf from './Bookshelf.js';
 import './App.css';
-import * as BooksAPI from './BooksAPI.js';
+import * as BooksAPI from '../api/BooksAPI.js';
 import { Route, Link } from 'react-router-dom';
 import Search from './search';
 import { library } from '@fortawesome/fontawesome-svg-core';
