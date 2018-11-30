@@ -13,7 +13,7 @@ Clone this repo, then
 * install all project dependencies with `npm install`
 * start the server with `npm start`
 
-[Live demo](https://kokoreads.herokuapp.com/search)
+[Live demo](https://kokoreads.herokuapp.com/)
 
 ## About the App
 
